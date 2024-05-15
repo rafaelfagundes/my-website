@@ -1,8 +1,12 @@
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as Font } from "next/font/google";
+import { Outfit as Font } from "next/font/google";
 import "./globals.css";
 
-const font = Font({ subsets: ["latin"] });
+const fontSans = Font({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Rafael Fagundes",
@@ -65,7 +69,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
