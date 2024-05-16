@@ -25,7 +25,7 @@ function HeroSection() {
               {config.hero.subtitle}
             </p>
             <div className="flex flex-row space-x-3 items-center">
-              <CustomButton cta={true}>
+              <CustomButton cta="true">
                 {config.hero.buttons.primary}
               </CustomButton>
               <CustomButton variant="outline">
