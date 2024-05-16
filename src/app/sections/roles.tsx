@@ -2,14 +2,9 @@
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import config from "@/lib/config";
+import { calculateYearsOfExperience } from "@/lib/utils";
 import { motion } from "framer-motion";
 import React from "react";
-
-function calculateYearsOfExperience() {
-  const currentYear = new Date().getFullYear();
-  const startYear = 2012;
-  return currentYear - startYear;
-}
 
 function RolesSection() {
   const yearsOfExperience = calculateYearsOfExperience();
@@ -27,20 +22,20 @@ function RolesSection() {
           }}
           className="relative flex flex-col items-center justify-center"
         >
-          <div className="text-5xl md:text-7xl font-bold text-white text-center mb-4">
+          <div className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center mb-4">
             {`${yearsOfExperience}+ ${
               yearsOfExperience > 1 ? `years` : `year`
             }`}
           </div>
-          <div className="font-light text-2xl md:text-4xl text-neutral-200">
+          <div className="font-light text-2xl lg:text-3xl xl:text-4xl text-neutral-200">
             {config.roles.title}
           </div>
         </motion.div>
         <div className="h-8 sm:h-16"></div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {config.roles.roles.map((role) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 xl:gap-10">
+          {config.roles.roles.map((role, index) => (
             <BackgroundGradient
-              className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-black min-h-full"
+              className={`rounded-[22px] max-w-sm p-4 sm:p-10 bg-black min-h-full`}
               key={role.title}
             >
               <RoleIcon
@@ -48,11 +43,11 @@ function RolesSection() {
                 startColor={role.startColor}
                 endColor={role.endColor}
               />
-              <p className="text-base sm:text-xl font-medium text-white mt-4 mb-2">
+              <p className="text-base xl:text-xl font-medium text-white mt-4 mb-2">
                 {role.title}
               </p>
 
-              <p className="text-base text-gray-400 leading-6">
+              <p className="text-sm xl:text-base text-gray-400 leading-6">
                 {role.description}
               </p>
             </BackgroundGradient>

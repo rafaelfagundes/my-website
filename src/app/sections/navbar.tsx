@@ -1,4 +1,6 @@
+"use client";
 import CustomButton from "@/components/custom/button";
+import { motion } from "framer-motion";
 import config from "../../lib/config";
 
 function NavBar() {
@@ -9,12 +11,34 @@ function NavBar() {
           href="/"
           className="flex items-baseline space-x-3 rtl:space-x-reverse"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold">Rafael</h2>
-          <img
-            src="/img/maple-leaf.svg"
-            alt="I'm based in Canada"
-            className="w-4 h-4 sm:w-5 sm:h-5"
-          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              delay: 0,
+              duration: 0.2,
+              ease: "easeInOut",
+            }}
+            className="relative flex flex-col items-center justify-center"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold">Rafael</h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.4,
+              ease: "easeInOut",
+            }}
+            className="relative flex flex-col items-center justify-center"
+          >
+            <img
+              src="/img/maple-leaf.svg"
+              alt="I'm based in Canada"
+              className="w-4 h-4 sm:w-5 sm:h-5"
+            />
+          </motion.div>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <CustomButton variant="outline" className="hidden sm:block">
