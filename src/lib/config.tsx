@@ -1,4 +1,5 @@
 import { BracketsCurly, Code, GearFine } from "@phosphor-icons/react/dist/ssr";
+import { calculateYearsOfExperience } from "./utils";
 
 const config = {
   navbar: {
@@ -9,7 +10,7 @@ const config = {
       firstLine: "Hi! I am",
       secondLine: "Rafael Fagundes",
     },
-    avatar: { img: "/img/avatar.alt.png", alt: "Rafael Fagundes" },
+    avatar: { img: "/img/avatar.png", alt: "Rafael Fagundes" },
     subtitle:
       "I'm a passionate full-stack developer dedicated to building innovative and efficient solutions. Currently based in Canada.",
     buttons: {
@@ -130,6 +131,24 @@ const config = {
           "I implement CI/CD pipelines and manage cloud infrastructure using Docker, Kubernetes, and AWS. My projects show my ability to streamline development and maintain systems.",
       },
     ],
+  },
+  about: {
+    aboutMe: {
+      title: "About Me",
+      paragraphs: [
+        "I'm a software engineer with a passion for building performant, scalable applications that solve real-world problems. I specialize in building full-stack applications with a focus on the frontend.",
+        `I have ${calculateYearsOfExperience()} years of experience in the software development industry and have worked with a variety of technologies and frameworks.`,
+        "I'm currently based in Canada and am open to new opportunities. If you have a project you'd like to discuss, feel free to reach out to me.",
+        "In my free time, I enjoy reading, hiking, and playing video games.",
+        "I'm always looking to learn new things and improve my skills. I believe that the best way to grow as a developer is to work on projects that challenge you and push you out of your comfort zone.",
+      ],
+    },
+    mySkills: {
+      frontend: ["React", "Next.js", "Svelte", "Tailwind CSS", "TypeScript"],
+      backend: ["Node.js", "Express", "Nest.js", ".NET Core", "Python"],
+      databases: ["PostgreSQL", "MongoDB", "Redis"],
+      devopsAndOthers: ["Docker", "Kubernetes", "AWS", "Linux", "Git"],
+    },
   },
 };
 
