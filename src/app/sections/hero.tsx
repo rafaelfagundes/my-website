@@ -1,14 +1,26 @@
+"use client";
 import CustomButton from "@/components/custom/button";
+import { HeroPrimaryButton } from "@/components/custom/hero-primary-button";
 import ContentContainer from "@/components/ui/content-container";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { FileTs } from "@phosphor-icons/react/dist/ssr";
+import { motion } from "framer-motion";
 import config from "../../lib/config";
 
 function HeroSection() {
   return (
     <ContentContainer>
-      <div className="flex flex-center justify-center min-h-[520px]">
-        <div className="grid sm:grid-cols-5 grid-cols-1 items-center gap-5 ">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{
+          delay: 1.2,
+          duration: 1.5,
+          ease: "easeInOut",
+        }}
+        className="flex flex-center justify-center"
+      >
+        <div className="grid sm:grid-cols-5 grid-cols-1 items-center gap-5">
           <img
             className="col-span-2 self-end sm:hidden mx-auto px-0 py-2"
             src={config.hero.avatar.img}
@@ -25,10 +37,10 @@ function HeroSection() {
               {config.hero.subtitle}
             </p>
             <div className="flex flex-row space-x-3 items-center">
-              <CustomButton cta="true">
+              <HeroPrimaryButton>
                 {config.hero.buttons.primary}
-              </CustomButton>
-              <CustomButton variant="outline">
+              </HeroPrimaryButton>
+              <CustomButton variant="secondary">
                 {config.hero.buttons.secondary}
               </CustomButton>
             </div>
@@ -45,12 +57,23 @@ function HeroSection() {
             alt={config.hero.avatar.alt}
           />
         </div>
-      </div>
+      </motion.div>
       <div className="h-6 sm:h-12"></div>
-      <InfiniteMovingCards
-        speed="slow"
-        items={config.hero.featuredSkills}
-      ></InfiniteMovingCards>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 1.4,
+          duration: 0.7,
+          ease: "easeInOut",
+        }}
+        className="relative w-full h-50"
+      >
+        <InfiniteMovingCards
+          speed="slow"
+          items={config.hero.featuredSkills}
+        ></InfiniteMovingCards>
+      </motion.div>
     </ContentContainer>
   );
 }

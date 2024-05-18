@@ -16,19 +16,21 @@ function NavBar() {
             whileInView={{ opacity: 1 }}
             transition={{
               delay: 0,
-              duration: 0.2,
+              duration: 0.5,
               ease: "easeInOut",
             }}
             className="relative flex flex-col items-center justify-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold">Rafael</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold">
+              {config.navbar.firstName}
+            </h2>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 5 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              delay: 0.3,
-              duration: 0.4,
+              delay: 0.4,
+              duration: 0.5,
               ease: "easeInOut",
             }}
             className="relative flex flex-col items-center justify-center"
@@ -41,9 +43,19 @@ function NavBar() {
           </motion.div>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <CustomButton variant="outline" className="hidden sm:block">
-            {config.navbar.button}
-          </CustomButton>
+          <motion.div
+            initial={{ opacity: 0, y: 5 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 1.4,
+              duration: 0.4,
+              ease: "easeInOut",
+            }}
+          >
+            <CustomButton variant="outline" className="hidden sm:block">
+              {config.navbar.button}
+            </CustomButton>
+          </motion.div>
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -74,22 +86,39 @@ function NavBar() {
           id="navbar-sticky"
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
+            <motion.li
+              initial={{ opacity: 0, y: 5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.8,
+                duration: 0.4,
+                ease: "easeInOut",
+              }}
+            >
               <a
-                href="#"
+                href="#about"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 About
               </a>
-            </li>
-            <li>
+            </motion.li>
+
+            <motion.li
+              initial={{ opacity: 0, y: 5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 1.2,
+                duration: 0.4,
+                ease: "easeInOut",
+              }}
+            >
               <a
                 href="#"
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Projects
               </a>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>

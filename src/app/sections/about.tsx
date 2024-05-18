@@ -2,6 +2,7 @@ import Pill from "@/components/custom/pill";
 import SectionTitle from "@/components/custom/section-title";
 import ContentContainer from "@/components/ui/content-container";
 import config from "@/lib/config";
+import { cn } from "@/lib/utils";
 
 function AboutSection() {
   const colors = {
@@ -20,18 +21,25 @@ function AboutSection() {
 
   return (
     <ContentContainer>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-40">
-        <div className="flex flex-col w-full">
-          <SectionTitle color="#6874E8">About Me</SectionTitle>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-8 py-3">
+        <div className="flex flex-col w-full sm:bg-red-50 p-0 sm:p-8 rounded-xl">
+          <SectionTitle color="#dc3d2f">About Me</SectionTitle>
           <div className="h-8"></div>
           {config.about.aboutMe.paragraphs.map((paragraph, index) => (
-            <p className="mb-6" key={index}>
+            <p
+              className={cn(
+                index === config.about.aboutMe.paragraphs.length - 1
+                  ? "mb-0"
+                  : "mb-6"
+              )}
+              key={index}
+            >
               {paragraph}
             </p>
           ))}
         </div>
-        <div className="flex flex-col w-full">
-          <SectionTitle color="#FFBE0B">My Skills</SectionTitle>
+        <div className="flex flex-col w-full sm:bg-red-50 p-0 sm:p-8 rounded-xl">
+          <SectionTitle color="#dc3d2f">My Skills</SectionTitle>
           <div className="h-8"></div>
           <div className="flex flex-row items-center gap-2 mb-8 flex-wrap">
             {config.about.mySkills.frontend.map((skill, index) => (
