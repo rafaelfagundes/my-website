@@ -1,8 +1,31 @@
-import { BracketsCurly, Code, GearFine } from "@phosphor-icons/react/dist/ssr";
+import {
+  BracketsCurly,
+  Code,
+  GearFine,
+  GithubLogo,
+  LinkedinLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import { calculateYearsOfExperience } from "./utils";
 
 const config = {
+  me: {
+    firstName: "Rafael",
+    lastName: "Fagundes",
+    socialLinks: [
+      {
+        name: "GitHub",
+        url: "https://github.com/rafaelfagundes",
+        icon: <GithubLogo size={24} />,
+      },
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/rafaelcfl/",
+        icon: <LinkedinLogo size={24} />,
+      },
+    ],
+  },
   navbar: {
+    firstName: "Rafael",
     button: "Contact Me",
   },
   hero: {
@@ -102,7 +125,7 @@ const config = {
     ],
   },
   roles: {
-    title: "of experience in IT industry",
+    title: "of experience in the IT industry",
     roles: [
       {
         title: "Front End Development",
@@ -110,7 +133,7 @@ const config = {
         startColor: "#00ee6e",
         endColor: "#0c75e6",
         description:
-          "I create user-friendly interfaces using React, Next.js, and TailwindCSS. I've worked on multiple projects, focusing on responsive and intuitive web design.",
+          "I create user-friendly interfaces using React, Next.js, TailwindCSS.",
       },
       {
         title: "Back End Development",
@@ -120,7 +143,7 @@ const config = {
         startColor: "#fa9372",
         endColor: "#ef709b",
         description:
-          "I build robust server-side applications with Node.js, Express, and PostgreSQL. My projects demonstrate my skills in data management and server logic.",
+          "I build robust server-side applications with Node.js, Express, and PostgreSQL.",
       },
       {
         title: "DevOps Engineering",
@@ -128,7 +151,7 @@ const config = {
         startColor: "#07c8f9",
         endColor: "#0d41e1",
         description:
-          "I implement CI/CD pipelines and manage cloud infrastructure using Docker, Kubernetes, and AWS. My projects show my ability to streamline development and maintain systems.",
+          "I implement CI/CD pipelines and manage cloud infrastructure.",
       },
     ],
   },
@@ -149,6 +172,20 @@ const config = {
       databases: ["PostgreSQL", "MongoDB", "Redis"],
       devopsAndOthers: ["Docker", "Kubernetes", "AWS", "Linux", "Git"],
     },
+  },
+  contact: {
+    sectionTitle: "Get in Touch",
+    introParagraph:
+      "Have a question or want to work together? Fill out the form below or reach out to me on social media.",
+    nameLabel: "Name",
+    namePlaceholder: "Enter your name",
+    emailLabel: "Email",
+    emailPlaceholder: "Enter your email",
+    messageLabel: "Message",
+    messagePlaceholder: "Enter your message",
+    submitButton: "Send Message",
+    connectTitle: "Connect with me",
+    connectParagraph: "Follow me on social media to stay up to date.",
   },
 };
 

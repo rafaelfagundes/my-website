@@ -10,3 +10,7 @@ export function calculateYearsOfExperience() {
   const startYear = 2012;
   return currentYear - startYear;
 }
+
+export function currentYear() {
+  return new Date().getFullYear();
+}

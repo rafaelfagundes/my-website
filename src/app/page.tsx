@@ -1,6 +1,9 @@
 import AboutSection from "./sections/about";
+import ContactSection from "./sections/contact";
+import Footer from "./sections/footer";
 import HeroSection from "./sections/hero";
 import NavBar from "./sections/navbar";
+import ProjectsSection from "./sections/projects";
 import RolesSection from "./sections/roles";
 
 export default function Home() {
@@ -9,10 +12,11 @@ export default function Home() {
       <NavBar></NavBar>
       <div className="h-12 sm:h-24"></div>
       <HeroSection></HeroSection>
-      <div className="h-12 sm:h-12"></div>
       <RolesSection></RolesSection>
-      <div className="h-12 sm:h-12"></div>
       <AboutSection></AboutSection>
+      <ProjectsSection></ProjectsSection>
+      <ContactSection></ContactSection>
+      <Footer></Footer>
     </main>
   );
 }
