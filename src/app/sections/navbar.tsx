@@ -6,7 +6,7 @@ import config from "../../lib/config";
 function NavBar() {
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-50 top-0 start-0">
-      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto py-4 px-6 sm:px-12 sm:py-8">
+      <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto py-4 px-6 sm:px-12 sm:py-4">
         <a
           href="/"
           className="flex items-baseline space-x-3 rtl:space-x-reverse"

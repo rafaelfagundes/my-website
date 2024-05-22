@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center mx-auto">
       <NavBar></NavBar>
-      <div className="h-12 sm:h-24"></div>
+      <div className="h-12 sm:h-20"></div>
       <HeroSection></HeroSection>
       <RolesSection></RolesSection>
       <AboutSection></AboutSection>
