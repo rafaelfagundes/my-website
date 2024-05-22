@@ -81,6 +81,18 @@ const config = {
         textColor: "text-white",
       },
       {
+        title: "React Native",
+        image: "/img/logos/react-native.svg",
+        bgColor: "bg-black",
+        textColor: "text-white",
+      },
+      {
+        title: "Flutter",
+        image: "/img/logos/flutter.svg",
+        bgColor: "bg-black",
+        textColor: "text-white",
+      },
+      {
         title: "Python",
         image: "/img/logos/python.svg",
         bgColor: "bg-black",
@@ -94,7 +106,7 @@ const config = {
       },
       {
         title: "Linux",
-        image: "/img/logos/linux.svg",
+        image: "/img/logos/tux.svg",
         bgColor: "bg-black",
         textColor: "text-white",
       },
