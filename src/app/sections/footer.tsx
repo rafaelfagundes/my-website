@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-gray-950 p-6 md:p-8 w-full">
-      <div className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-sm items-center">
+      <div className="px-20 container max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-sm items-center">
         <a
           href="/"
           className="flex items-baseline space-x-2 rtl:space-x-reverse text-gray-300"
@@ -20,7 +20,7 @@ export default function Footer() {
           />
         </a>
         <div className="text-center md:text-left">
-          <p className="text-gray-400 dark:text-gray-400">
+          <p className="text-gray-400 dark:text-gray-400 text-center">
             © {currentYear()} {config.me.firstName} {config.me.lastName}. All
             rights reserved.
           </p>

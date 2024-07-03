@@ -26,22 +26,19 @@ const config = {
   },
   navbar: {
     firstName: "Rafael",
-    button: "Contact Me",
+    button: "Contact",
   },
   hero: {
     tagline: {
-      firstLine: "Hi! I am",
+      hi: "Hi!",
+      firstLine: "I am",
       secondLine: "Rafael Fagundes",
     },
     avatar: { img: "/img/avatar.png", alt: "Rafael Fagundes" },
-    subtitle:
-      "I'm a passionate full-stack developer dedicated to building innovative and efficient solutions. Currently based in Canada.",
+    bio: "I'm a passionate full-stack developer dedicated to building innovative and efficient solutions. Currently based in Canada.",
     buttons: {
-      primary: "Hire Me",
+      primary: "Get In Touch",
       secondary: "Know More",
-    },
-    bio: {
-      text: "Full-Stack Developer specializing in building web/mobile apps, APIs, and other fun stuff.",
     },
     featuredSkills: [
       {

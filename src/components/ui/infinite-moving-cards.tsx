@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative rounded-2xl flex-shrink-0 flex flex-col items-center justify-center min-w-28"
+            className="relative flex-shrink-0 flex flex-col items-center justify-center min-w-24 lg:min-w-28"
             key={item.image}
           >
             <div
@@ -94,7 +94,11 @@ export const InfiniteMovingCards = ({
               className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5"
             ></div>
             <span className="relative z-20 text-sm leading-[1.6] font-normal">
-              <img src={item.image} alt={item.title} className="h-12 w-12" />
+              <img
+                src={item.image}
+                alt={item.title}
+                className="h-10 w-10 lg:h-12 lg:w-12"
+              />
             </span>
             <div className="relative z-20 mt-2 flex flex-row items-center">
               <span className="text-sm leading-[1.6] text-foreground opacity-80 font-normal text-center">

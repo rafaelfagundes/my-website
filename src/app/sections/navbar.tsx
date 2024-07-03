@@ -1,7 +1,19 @@
 "use client";
 import CustomButton from "@/components/custom/button";
 import { motion } from "framer-motion";
+import animations from "../../lib/animations";
 import config from "../../lib/config";
+
+const MenuItems = [
+  {
+    name: "About",
+    href: "#about",
+  },
+  {
+    name: "Projects",
+    href: "#",
+  },
+];
 
 function NavBar() {
   return (
@@ -12,13 +24,7 @@ function NavBar() {
           className="flex items-baseline space-x-3 rtl:space-x-reverse"
         >
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{
-              delay: 0,
-              duration: 0.5,
-              ease: "easeInOut",
-            }}
+            {...animations.navbar.name}
             className="relative flex flex-col items-center justify-center"
           >
             <h2 className="text-3xl sm:text-4xl font-bold">
@@ -26,13 +32,7 @@ function NavBar() {
             </h2>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 5 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.4,
-              duration: 0.5,
-              ease: "easeInOut",
-            }}
+            {...animations.navbar.mapleLeaf}
             className="relative flex flex-col items-center justify-center"
           >
             <img
@@ -43,15 +43,7 @@ function NavBar() {
           </motion.div>
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <motion.div
-            initial={{ opacity: 0, y: 5 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 1.4,
-              duration: 0.4,
-              ease: "easeInOut",
-            }}
-          >
+          <motion.div {...animations.navbar.button}>
             <CustomButton variant="outline" className="hidden sm:block">
               {config.navbar.button}
             </CustomButton>
@@ -86,39 +78,19 @@ function NavBar() {
           id="navbar-sticky"
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <motion.li
-              initial={{ opacity: 0, y: 5 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 0.8,
-                duration: 0.4,
-                ease: "easeInOut",
-              }}
-            >
-              <a
-                href="#about"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            {MenuItems.map((item, index) => (
+              <motion.li
+                key={item.name}
+                {...animations.navbar.getMenuItem(index)}
               >
-                About
-              </a>
-            </motion.li>
-
-            <motion.li
-              initial={{ opacity: 0, y: 5 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 1.2,
-                duration: 0.4,
-                ease: "easeInOut",
-              }}
-            >
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-              >
-                Projects
-              </a>
-            </motion.li>
+                <a
+                  href={item.href}
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  {item.name}
+                </a>
+              </motion.li>
+            ))}
           </ul>
         </div>
       </div>
